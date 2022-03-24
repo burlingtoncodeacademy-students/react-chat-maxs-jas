@@ -1,0 +1,46 @@
+/* removes margins, padding, and changes font-size on everything on the page */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5vh;
+}
+
+/* horizontally centers the body that holds all content to the page and only allows it to take up 70% of the browser screens width */
+body {
+  max-width: 80%;
+  margin: auto;
+}
+
+/* centers the text in header and creates a margin */
+#header {
+  text-align: center;
+  margin: 1vh;
+}
+
+/* changes the font size of the h1 in the header */
+#header h1 {
+  font-size: 3vh;
+}
+
+/* turns the bodycontainer into a flexbox, sets its direction to a column, centers the content horizontally to its container */
+#bodycontainer {
+    display: flex;
+    
+  }
+  
+  /* creates a margin around all the divs in the bodycontainer */
+  #bodycontainer div {
+    margin: 0.25vh;
+  }
+
+  #leftscreen {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+  }
+
+  #rightscreen {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+  }
