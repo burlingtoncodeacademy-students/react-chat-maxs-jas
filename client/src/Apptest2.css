@@ -1,0 +1,165 @@
+/* removes margins, padding, and changes font-size on everything on the page
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* horizontally centers the body that holds all content to the page and only allows it to take up 70% of the browser screens width */
+/* body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+} */ 
+
+/* Style and layout for the header */
+
+
+/* Style and layout for the header */
+
+#header {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:1vw;
+  margin: 1vh auto;
+  font-size: 1.5rem;
+  min-width:100%;
+}
+
+
+/* Style and layout for the main container */
+#body-container {
+  display: flex;
+  margin: 0.25vh;
+  height: 35vh;
+}
+
+
+/* Style and layout for the left part of the container */
+#left-screen {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  width: 20%;
+  height: 35vh;
+}
+
+#room-container li:hover{
+  cursor:pointer;
+  color:lightblue
+}
+
+#room-container #room-selection {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  padding-left: 2vw;
+  text-align: left;
+}
+
+#room-container li{
+  padding: 0.2rem;
+}
+
+#rooms {
+  outline: 2px solid lightblue;
+  min-height: 30vh;
+}
+
+#rooms {
+  display: flex;
+  flex-direction: column;
+}
+
+#market-space {
+  outline: 2px solid lightblue;
+}
+
+#market-space img {
+  max-width: 100%;
+}
+
+
+
+/* Style and layout for the right part of the container */
+#right-screen {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 35vh;
+}
+
+#current-room h3 {
+  padding: 0;
+  padding-left: 2vw;
+  margin: 0;
+  font-size: 3vw;
+}
+
+#current-room {
+  outline: 2px solid lightblue;
+}
+
+#chat-box {
+  outline: 2px solid lightblue;
+  max-height: 30vh;
+  display: flex;
+  flex-direction: column-reverse;
+  gap:2vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 1vh 2vw;
+}
+
+#chat-box h3, #chat-box h2, #chat-box p{
+  margin:0.5rem 1rem;
+}
+
+#chat-box p{
+  font-size: 1rem;
+}
+
+#chat-box h3{
+  font-size:0.8rem;
+  font-style:italic;
+}
+
+#chat-box h2 {
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+
+#chat-box h2 span{
+  color: lightblue;
+}
+
+#chat-box-and-buttons {
+  outline: 2px solid lightblue;
+}
+
+#input-forms form{
+  display:flex;
+  gap:2vw;
+  padding:1rem;
+}
+
+#username-input{
+  width:10vw;
+  margin-left:0.5rem;
+}
+
+#message-input{
+  width:25vw;
+  margin-left:0.5rem;
+}
+
+/* #chat-box-and-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  } */

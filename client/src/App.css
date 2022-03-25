@@ -1,144 +1,160 @@
-/* Style and layout for the header */
-
-#header {
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1vh auto;
-  font-size: 1.5rem;
-  min-width:100%;
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100vh;
+}
+body {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 
-/* Style and layout for the main container */
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  margin: 1vh;
+  font-size: 2vw;
+  width: 60%;
+  outline: 2px solid lightblue;
+}
+
+#header img {
+  height: 4vw;
+}
+
+hr {
+  width: 60%;
+}
+
 #body-container {
   display: flex;
   margin: 0.25vh;
+  height: 45vh;
+  width: 60%;
+  gap: 1vh;
 }
 
-
-/* Style and layout for the left part of the container */
 #left-screen {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: space-between;
+  gap: 2vh;
   width: 20%;
-  height: 50vh;
+  height: 45vh;
 }
 
-#room-container p:hover{
-  cursor:pointer;
-  color:lightblue
-}
-
-#room-container #room-selection {
+#room-selection {
   list-style-type: none;
-  margin: auto;
-  padding: 0;
-  padding-left: 2vw;
-  text-align: left;
+  font-size: 1vw;
 }
 
-#room-container p{
-  padding: 0.2rem;
-}
-
-#rooms {
-  outline: 2px solid lightblue;
-  min-height: 30vh;
+#room-container li:hover {
+  cursor: pointer;
+  color: lightblue;
 }
 
 #rooms {
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  outline: 2px solid lightblue;
 }
 
-#market-space {
-  max-height: 20vh;
-  outline: 2px solid lightblue;
+#rooms h3 {
+  font-size: 1.25vw;
 }
 
 #market-space img {
   max-width: 100%;
-  max-height: 100%;
 }
 
-
-
-/* Style and layout for the right part of the container */
 #right-screen {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 80%;
-  height: 50vh;
-}
-
-#current-room h3 {
-  padding: 0;
-  padding-left: 2vw;
-  margin: 0;
-  font-size: 3vw;
+  height: 45vh;
+  outline: 2px solid lightblue;
 }
 
 #current-room {
   outline: 2px solid lightblue;
 }
 
-#chat-box {
-  outline: 2px solid lightblue;
-  max-height: 50vh;
+#current-room h3 {
   display: flex;
-  flex-direction: column-reverse;
-  gap:2vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  margin: 1vh 2vw;
-}
-
-#chat-box h3, #chat-box h2, #chat-box p{
-  margin:0.5rem 1rem;
-}
-
-#chat-box p{
-  font-size: 1rem;
-}
-
-#chat-box h3{
-  font-size:0.8rem;
-  font-style:italic;
-}
-
-#chat-box h2 {
-  font-size: 1.2rem;
-}
-
-
-#chat-box h2 span{
-  color: lightblue;
+  align-items: center;
+  padding-left: 2vw;
+  font-size: 2vw;
+  height: 5vh;
 }
 
 #chat-box-and-buttons {
+  height: 40vh;
+}
+
+#chat-box {
   outline: 2px solid lightblue;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin: 1vh 2vw;
+  height: 35vh;
+  word-wrap: break-word;
 }
 
-#input-forms form{
-  display:flex;
-  gap:2vw;
-  padding:1rem;
+#chat-box p {
+  font-size: 1vw;
 }
 
-#username-input{
-  width:10vw;
-  margin-left:0.5rem;
+#chat-box h3 {
+  font-size: 0.5vw;
+  font-style: italic;
+  margin-top: 1vh;
 }
 
-#message-input{
-  width:25vw;
-  margin-left:0.5rem;
+#chat-box h2 {
+  font-size: 1.25vw;
 }
 
+#chat-box h2 span {
+  color: lightblue;
+}
 
+#input-forms {
+  width: 100%;
+}
 
+#input-forms form {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 3vh;
+}
 
+#input-forms form label #username-input {
+  width: 6vw;
+}
 
+#input-forms form label #message-input {
+  width: 31vw;
+  height: 2.5vh;
+  resize: none;
+}
 
+#input-forms form button {
+  width: 3vw;
+  height: 2.5vh;
+}

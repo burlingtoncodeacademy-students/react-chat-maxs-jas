@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Picture from "./images/market.png";
 import Picture2 from "./images/market2.jpg";
 import Ping from "./audio/ping.mp3";
-import ChatIcon from "./images/chat-icon.png"
+import ChatIcon from "./images/chat-icon.png";
 
 import "./App.css";
 
 function App() {
   const [messageData, setMessageData] = useState([]);
-  const [currentRoom, setCurrentRoom] = useState("Main Room");
+  const [currentRoom, setCurrentRoom] = useState("Main");
   const [input, setInput] = useState(
     { user: "" },
     { messageBody: "" },
@@ -30,15 +30,15 @@ function App() {
     event.preventDefault();
     let audio = new Audio(Ping);
     audio.play();
-    let checkInputArray = input.messageBody.toString().split("")
+    let checkInputArray = input.messageBody.toString().split("");
     if (checkInputArray.length < 500) {
-    await fetch("http://localhost:8000/add-message", {
-      headers: { "content-type": "application/json" },
-      method: "POST",
-      body: JSON.stringify(input),
-    });
+      await fetch("http://localhost:8000/add-message", {
+        headers: { "content-type": "application/json" },
+        method: "POST",
+        body: JSON.stringify(input),
+      });
     } else {
-      alert("Woah woah woah, take it easy mate! 500 or less characters!")
+      alert("Woah woah woah, take it easy mate! 500 characters or less!");
     }
   }
 
@@ -79,17 +79,15 @@ function App() {
     <main>
       <header id="header">
         <h1>React Chat</h1>
-        <img src={ChatIcon} alt="some chat bubbles" height="50px" />
+        <img src={ChatIcon} alt="some chat bubbles" />
       </header>
-      <hr></hr>
-        <hr></hr>
       <div id="body-container">
         <div id="left-screen">
           <div id="rooms">
             <h3>Available Rooms</h3>
             <div id="room-container">
               <ul id="room-selection">
-                <li onClick={() => setCurrentRoom("Main Room")}>Main Room</li>
+                <li onClick={() => setCurrentRoom("Main")}>Main</li>
                 <li onClick={() => setCurrentRoom("Pets")}>Pets</li>
                 <li onClick={() => setCurrentRoom("Food")}>Food</li>
               </ul>
@@ -106,59 +104,58 @@ function App() {
           </div>
 
           <div id="chat-box-and-buttons">
-            <div id="chat-box">
-              {messageData.map((message) => {
-                if (message.room === currentRoom) {
-                  return (
-                    <>
-                      <div className="message-input">
-                        <h2>
-                          <span>{message.user}</span> says:
-                        </h2>
-                        <p>{message.messageBody}</p>
-                        <h3>Time: {message.when}</h3>
-                      </div>
-                    </>
-                  );
-                } else {
-                  return null;
-                }
-              })}
+            <div id="chat-box-container">
+              <div id="chat-box">
+                {messageData.map((message) => {
+                  if (message.room === currentRoom) {
+                    return (
+                      <>
+                        <div className="message-input">
+                          <h2>
+                            <span>{message.user}</span> says:
+                          </h2>
+                          <p>{message.messageBody}</p>
+                          <h3>Time: {message.when}</h3>
+                        </div>
+                      </>
+                    );
+                  } else {
+                    return null;
+                  }
+                })}
+              </div>
             </div>
 
             <div id="input-forms">
               <form onSubmit={handleSubmit}>
                 <label>
-                  Username:
                   <input
                     id="username-input"
                     type="text"
                     name="user"
                     value={input.user}
+                    placeholder="User Name"
                     onChange={handleChange}
                   />
                 </label>
 
                 <label>
-                  Message:
-                  <input
+                  <textarea
                     id="message-input"
-                    type="text"
                     name="messageBody"
                     value={input.messageBody}
+                    placeholder="Message: (500 characters or less)"
                     onChange={handleChange}
-                  />
+                  ></textarea>
                 </label>
-                <button type="submit" value="Submit">
-                  Submit
+                <button id="submit-button" type="submit" value="Enter">
+                  Enter
                 </button>
               </form>
             </div>
           </div>
         </div>
       </div>
-
-      <footer></footer>
     </main>
   );
 }
