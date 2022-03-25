@@ -1,46 +1,144 @@
-/* removes margins, padding, and changes font-size on everything on the page */
-* {
-  margin: 0;
-  padding: 0;
-  font-size: 1.5vh;
-}
+/* Style and layout for the header */
 
-/* horizontally centers the body that holds all content to the page and only allows it to take up 70% of the browser screens width */
-body {
-  max-width: 80%;
-  margin: auto;
-}
-
-/* centers the text in header and creates a margin */
 #header {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1vh auto;
+  font-size: 1.5rem;
+  min-width:100%;
+}
+
+
+/* Style and layout for the main container */
+#body-container {
+  display: flex;
+  margin: 0.25vh;
+}
+
+
+/* Style and layout for the left part of the container */
+#left-screen {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  margin: 1vh;
+  width: 20%;
+  height: 50vh;
 }
 
-/* changes the font size of the h1 in the header */
-#header h1 {
-  font-size: 3vh;
+#room-container p:hover{
+  cursor:pointer;
+  color:lightblue
 }
 
-/* turns the bodycontainer into a flexbox, sets its direction to a column, centers the content horizontally to its container */
-#bodycontainer {
-    display: flex;
-    
-  }
-  
-  /* creates a margin around all the divs in the bodycontainer */
-  #bodycontainer div {
-    margin: 0.25vh;
-  }
+#room-container #room-selection {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  padding-left: 2vw;
+  text-align: left;
+}
 
-  #leftscreen {
-      display: flex;
-      flex-direction: column;
-      width: 30%;
-  }
+#room-container p{
+  padding: 0.2rem;
+}
 
-  #rightscreen {
-      display: flex;
-      flex-direction: column;
-      width: 70%;
-  }
+#rooms {
+  outline: 2px solid lightblue;
+  min-height: 30vh;
+}
+
+#rooms {
+  display: flex;
+  flex-direction: column;
+}
+
+#market-space {
+  max-height: 20vh;
+  outline: 2px solid lightblue;
+}
+
+#market-space img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+/* Style and layout for the right part of the container */
+#right-screen {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 50vh;
+}
+
+#current-room h3 {
+  padding: 0;
+  padding-left: 2vw;
+  margin: 0;
+  font-size: 3vw;
+}
+
+#current-room {
+  outline: 2px solid lightblue;
+}
+
+#chat-box {
+  outline: 2px solid lightblue;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column-reverse;
+  gap:2vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 1vh 2vw;
+}
+
+#chat-box h3, #chat-box h2, #chat-box p{
+  margin:0.5rem 1rem;
+}
+
+#chat-box p{
+  font-size: 1rem;
+}
+
+#chat-box h3{
+  font-size:0.8rem;
+  font-style:italic;
+}
+
+#chat-box h2 {
+  font-size: 1.2rem;
+}
+
+
+#chat-box h2 span{
+  color: lightblue;
+}
+
+#chat-box-and-buttons {
+  outline: 2px solid lightblue;
+}
+
+#input-forms form{
+  display:flex;
+  gap:2vw;
+  padding:1rem;
+}
+
+#username-input{
+  width:10vw;
+  margin-left:0.5rem;
+}
+
+#message-input{
+  width:25vw;
+  margin-left:0.5rem;
+}
+
+
+
+
+
+
