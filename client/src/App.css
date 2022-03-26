@@ -5,6 +5,7 @@
 html {
   height: 100vh;
 }
+
 body {
   height: 100vh;
   font-family: "Roboto", sans-serif;
@@ -52,15 +53,19 @@ hr {
   justify-content: space-between;
   gap: 2vh;
   width: 20%;
-  height: 45vh;
+  height: 55vh;
 }
 
 #room-selection {
   list-style-type: none;
   font-size: 1vw;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#room-container li:hover {
+#rooms li:hover {
   cursor: pointer;
   color: lightblue;
 }
@@ -68,6 +73,14 @@ hr {
 #rooms {
   height: 100%;
   outline: 2px solid lightblue;
+}
+
+#rooms li{
+  width:5vw;
+}
+
+#rooms .selected{
+  outline:1px solid lightblue;
 }
 
 #rooms h3 {
@@ -81,26 +94,29 @@ hr {
 #right-screen {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   width: 80%;
-  height: 45vh;
+  height: 55vh;
   outline: 2px solid lightblue;
 }
 
 #current-room {
   outline: 2px solid lightblue;
+  margin:0 2vw;
 }
 
 #current-room h3 {
   display: flex;
   align-items: center;
   padding-left: 2vw;
+  padding:0.5rem;
   font-size: 2vw;
   height: 5vh;
 }
 
 #chat-box-and-buttons {
   height: 40vh;
+  margin: 2vh 0;
 }
 
 #chat-box {
@@ -146,15 +162,23 @@ hr {
 
 #input-forms form label #username-input {
   width: 6vw;
+  padding:0.2rem;
+  margin-top:0.5vh;
 }
 
 #input-forms form label #message-input {
   width: 31vw;
-  height: 2.5vh;
+  height: 3vh;
   resize: none;
+  padding:0.2rem;
+  padding-left:0.5vw;
+  padding-top:0.1vh;
+  margin-top: 1vh;
+
 }
 
 #input-forms form button {
   width: 3vw;
   height: 2.5vh;
+  margin-top:0.5vh;
 }

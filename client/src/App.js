@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Picture from "./images/market.png";
 import Picture2 from "./images/market2.jpg";
-import Ping from "./audio/ping.mp3";
 import ChatIcon from "./images/chat-icon.png";
+import Ping from "./audio/ping.mp3";
+import Error from "./audio/error.mp3"
+
 
 import "./App.css";
 
@@ -25,19 +27,24 @@ function App() {
   }
 
   async function handleSubmit(event) {
-    let clearInput = { ...input, messageBody: "" };
-    setInput(clearInput);
     event.preventDefault();
-    let audio = new Audio(Ping);
-    audio.play();
-    let checkInputArray = input.messageBody.toString().split("");
-    if (checkInputArray.length < 500) {
+    let checkInputArray = input.messageBody.split("");
+    if (checkInputArray.length <= 500) {
+      let clearInput = { ...input, messageBody: "" };
+      setInput(clearInput);
+
+      let pingAudio = new Audio(Ping);
+      pingAudio.play();
+
       await fetch("http://localhost:8000/add-message", {
         headers: { "content-type": "application/json" },
         method: "POST",
         body: JSON.stringify(input),
       });
     } else {
+      let errorAudio = new Audio(Error);
+      errorAudio.play()
+
       alert("Woah woah woah, take it easy mate! 500 characters or less!");
     }
   }
@@ -85,13 +92,11 @@ function App() {
         <div id="left-screen">
           <div id="rooms">
             <h3>Available Rooms</h3>
-            <div id="room-container">
               <ul id="room-selection">
-                <li onClick={() => setCurrentRoom("Main")}>Main</li>
-                <li onClick={() => setCurrentRoom("Pets")}>Pets</li>
-                <li onClick={() => setCurrentRoom("Food")}>Food</li>
+                <li className={`wrapper searchDiv ${currentRoom === "Main" ? "selected" : ""}`} onClick={() => setCurrentRoom("Main")}>Main</li>
+                <li className={`wrapper searchDiv ${currentRoom === "Pets" ? "selected" : ""}`} onClick={() => setCurrentRoom("Pets")}>Pets</li>
+                <li className={`wrapper searchDiv ${currentRoom === "Food" ? "selected" : ""}`} onClick={() => setCurrentRoom("Food")}>Food</li>
               </ul>
-            </div>
           </div>
           <div id="market-space">
             <img src={images[currentImage]} alt="marketers" />
@@ -104,7 +109,7 @@ function App() {
           </div>
 
           <div id="chat-box-and-buttons">
-            <div id="chat-box-container">
+        
               <div id="chat-box">
                 {messageData.map((message) => {
                   if (message.room === currentRoom) {
@@ -124,7 +129,7 @@ function App() {
                   }
                 })}
               </div>
-            </div>
+  
 
             <div id="input-forms">
               <form onSubmit={handleSubmit}>
