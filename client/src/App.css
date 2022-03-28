@@ -1,24 +1,18 @@
+/* removes margin and padding from everything on the page */
 * {
   margin: 0;
   padding: 0;
 }
-html {
-  height: 100vh;
-}
 
-body {
-  height: 100vh;
-  font-family: "Roboto", sans-serif;
-}
-
+/* turns the main into a flexbox, changes the flex direction to column, centers the contents on the cross axis, and changes the font */
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
 }
 
+/* turns the container with id header into a flexbox and centers the contents on both axis. Adds a gap, margin, and outline to the container. Changes the width of the container while also changing the text contents font size. */
 #header {
   display: flex;
   justify-content: center;
@@ -30,22 +24,21 @@ main {
   outline: 2px solid lightblue;
 }
 
+/* changes the height of the img in the id header container */
 #header img {
   height: 4vw;
 }
 
-hr {
-  width: 60%;
-}
-
+/* turns the container with id body-container into a flexbox. Adds a margin to the container and gap between the contents. Changes the width and height of the container */
 #body-container {
   display: flex;
   margin: 0.25vh;
-  height: 45vh;
+  height: 55vh;
   width: 60%;
   gap: 1vh;
 }
 
+/* turns the container with id left-screen into a flexbox, changes its direction to column, and aligns the text to the center and spreads the content equally from the ends. Sets a gap between the contents while also setting a height and width. */
 #left-screen {
   display: flex;
   flex-direction: column;
@@ -56,41 +49,48 @@ hr {
   height: 55vh;
 }
 
+/* turns the container with id room-selection into a flexbox, changes its direction to column, and centers the items along the cross-axis. Removes the list style typing of the contents and changes the font size*/
 #room-selection {
   list-style-type: none;
   font-size: 1vw;
   display:flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
+/* when the li elements in the container with id rooms are hovered over with the mouse pointer they highlight */
 #rooms li:hover {
   cursor: pointer;
   color: lightblue;
 }
 
+/* container will spread to all available space not just the length of the contents, there will be an outline around the container*/
 #rooms {
   height: 100%;
   outline: 2px solid lightblue;
 }
 
+/* set width to list elements in container */
 #rooms li{
   width:5vw;
 }
 
+/* the room the user has selected will have an outline around it */
 #rooms .selected{
   outline:1px solid lightblue;
 }
 
+/* h3 in container will have font size changed */
 #rooms h3 {
   font-size: 1.25vw;
 }
 
+/* image in container will fit the containers width */
 #market-space img {
   max-width: 100%;
 }
 
+/* turns the container with id right-screen into a flexbox, changes its direction to column, and centers the content along the main axis. Sets a gap between the contents while also setting a height and width. */
 #right-screen {
   display: flex;
   flex-direction: column;
@@ -100,11 +100,13 @@ hr {
   outline: 2px solid lightblue;
 }
 
+/* adds outline and margin to container */
 #current-room {
   outline: 2px solid lightblue;
-  margin:0 2vw;
+  margin: 2vw;
 }
 
+/* turns container into flex, centers the items along the cross axis. Adds padding to all sides, extra on the left. Changes font size and sets a height for the container. */
 #current-room h3 {
   display: flex;
   align-items: center;
@@ -114,11 +116,13 @@ hr {
   height: 5vh;
 }
 
+/* sets height and adds margin to container */
 #chat-box-and-buttons {
   height: 40vh;
   margin: 2vh 0;
 }
 
+/* turns container into flexbox and sets direction to column-reverse. Adds a gap between contents, and sets the margin, outline, and height of the container. Makes the container scrollable along the y-axis and allows for words to wrap inside the container. */
 #chat-box {
   outline: 2px solid lightblue;
   display: flex;
@@ -131,28 +135,34 @@ hr {
   word-wrap: break-word;
 }
 
+/* sets the font-size of the p element in the container */
 #chat-box p {
   font-size: 1vw;
 }
 
+/* sets the font-size of the h3 element in the container, italicize the font, and add a margin to the top */
 #chat-box h3 {
   font-size: 0.5vw;
   font-style: italic;
   margin-top: 1vh;
 }
 
+/* sets the font-size of the h2 element in the container */
 #chat-box h2 {
   font-size: 1.25vw;
 }
 
+/* sets the color of the span in the h2 in the container */
 #chat-box h2 span {
   color: lightblue;
 }
 
+/* sets container width to 100 percent of the parent container width */
 #input-forms {
   width: 100%;
 }
 
+/* turns the form container into a flexbox, centering the contents along the cross-axis, and evenly spacing the the contents along the main axis. Sets a height to the container */
 #input-forms form {
   display: flex;
   justify-content: space-evenly;
@@ -160,12 +170,14 @@ hr {
   height: 3vh;
 }
 
+/* sets width, padding, and a top margin to the container */
 #input-forms form label #username-input {
   width: 6vw;
   padding:0.2rem;
   margin-top:0.5vh;
 }
 
+/* sets width and height to container. Adds padding, extra on the top and left, also adds margin to the top. Removes the ability to resize the field. */
 #input-forms form label #message-input {
   width: 31vw;
   height: 3vh;
@@ -174,9 +186,9 @@ hr {
   padding-left:0.5vw;
   padding-top:0.1vh;
   margin-top: 1vh;
-
 }
 
+/* sets width and height to container, also adding a margin to the top. */
 #input-forms form button {
   width: 3vw;
   height: 2.5vh;
