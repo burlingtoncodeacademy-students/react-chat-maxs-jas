@@ -1,7 +1,7 @@
 {
   "name": "react-chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "You will be creating a piece of full stack software: a chat application.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,8 +12,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burlingtoncodeacademy-students/react-chat-maxs-jas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/burlingtoncodeacademy-students/react-chat-maxs-jas/issues"
+  },
+  "homepage": "https://github.com/burlingtoncodeacademy-students/react-chat-maxs-jas#readme"
 }
